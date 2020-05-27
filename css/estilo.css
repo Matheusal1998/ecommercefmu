@@ -1,0 +1,87 @@
+body{
+    font-family: 'Roboto', sans-serif;
+}
+
+.paginacao{
+    margin-left: 50%;
+}
+.titulo-principal{
+    margin-top: 5px;
+    color: #000;
+    font-size: 20px;
+}
+.form-produto{
+    width: 400px;
+    margin-left: 13px;
+    margin-top: 13px;
+}
+.categoria{
+    display: flex;
+    font-style: none;
+    list-style: none;
+    text-decoration: none;
+    font-size: none;
+    list-style: none;
+}
+.categoria li{
+    
+    border-bottom: 1px solid #dcdc;
+    margin-left: 4px;
+}
+.categoria li:hover{
+    font-weight: bold;
+}
+footer{
+    background-color: #1E90FF;
+}
+.list-unstyled a{
+    color:#000;
+}
+.footer-copyright text-center a {
+    color:#000;
+}
+
+.titulo_carrinho {
+    font-size: 15px;
+    font-weight: BOLD;
+ }
+
+ .sub-titulo_carrinho {
+    font-size: 13px;
+ }
+
+ .produto_carrinho {
+    margin-left: 100px;
+    margin-top: 10px;
+    border-bottom: 1px solid #dcdcdc;
+ }
+
+ .carinnho {
+    margin-top: 10px;
+ }
+
+ .carinnho img {
+
+    float: left;
+ }
+
+ .ValorTotal {
+    float: right;
+    font-size: 19px;
+    font-weight: bold;
+ }
+
+ .btn-remover {
+    text-decoration: none;
+    color: red;
+    /* background-color: dcdcdc; */
+    padding: -2px;
+    font-weight: bold;
+ }
+ .invisivel{
+     display: none;
+ }
+ .filtro{
+    border: 0.8px solid #ccc;
+    border-radius: 5px;
+ }
