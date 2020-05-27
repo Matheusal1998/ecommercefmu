@@ -29,39 +29,21 @@ $total_cursos = mysqli_num_rows($resultado_cursos);
 
 <head>
     <title>lOJA VIRTUAL</title>
-    <link rel="stylesheet" type="text/css" href="css/estilo.css">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100&display=swap" rel="stylesheet">
-    <style>
-
-    </style>
+		<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+		<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100&display=swap" rel="stylesheet">
+		<script src="//code.jquery.com/jquery-1.10.2.js"></script>
+    <script>
+			
+            $(function() {
+               $("#header").load("header.html");
+               $("#footer").load("footer.html");
+            });
+     </script>
 </head>
 
 <body>
-    <ul class="nav justify-content-end">
-        <li class="nav-item">
-            <a class="nav-link active" href="index.php">TecNova - Ecommerce Digital</a>
-        </li>
-        <li class="nav-item">
-            <a class="nav-link" href="login.php">Login</a>
-        </li>
-        <li class="nav-item">
-            <a class="nav-link" href="listadeprodutos.php">Listas de produtos</a>
-        </li>
-        <li class="nav-item">
-            <a class="nav-link" href="carrinho.php">Carrinho</a>
-        </li>
-    </ul>
-    <img src="imagens/tv02-vem.webp" width="50%" />
-    <ul class="categoria">
-        <li class="nav-item">
-            <a class="nav-link active" href="produtosPorCategoria.php?id_categoria=1">Celulares</a>
-        </li>
-        <li class="nav-item">
-            <a class="nav-link" href="produtosPorCategoria.php?id_categoria=2">Notebook</a>
-        </li>
-    </ul>
+<div id="header"></div>
     <div class="container theme-showcase" role="main">
         <div class="row">
             <?php while ($rows_cursos = mysqli_fetch_assoc($resultado_cursos)) { ?>
