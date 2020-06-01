@@ -34,36 +34,37 @@ $total_cursos = mysqli_num_rows($resultado_cursos);
 
     </head>
     <body>
-	<ul class="nav justify-content-end">
-      <li class="nav-item">
-        <a class="nav-link active" href="index.php">TecNova - Ecommerce Digital</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="inicial.php">Login</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="listadeprodutos.php">Listas de produtos</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="carrinho.php">Carrinho</a>
-      </li>
-    </ul>
+ 
+    <ul class="nav justify-content-end">
+  <li class="nav-item">
+    <a class="nav-link active" href="index.php">TecNova - Ecommerce Digital</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" href="inicial.php">Login</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" href="listadeprodutos.php">Listas de produtos</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" href="carrinho.php">Carrinho</a>
+  </li>
+</ul>
 <div class="form-produto">
 <form method="POST" action="cadastroP.php" enctype="multipart/form-data">
   <div class="form-group">
     <label for="exampleInputEmail1">Nome</label>
-    <input type="text" class="form-control" id="nome" name="nome"  placeholder="Ex: Notebook">
+    <input type="text" class="form-control" id="nome" name="nome"  placeholder="Ex: Notebook" required>
   </div>
   <div class="form-group">
     <label for="exampleInputEmail1">Descrição</label>
-    <input type="text" class="form-control"name="descricao" id="descricao"  placeholder="Ex: i5, 16gb de tam">
+    <input type="text" class="form-control"name="descricao" id="descricao"  placeholder="Ex: i5, 16gb de tam" required>
   </div>
   <div class="form-group">
     <label for="exampleInputEmail1">Valor</label>
-    <input type="text" class="form-control" name="valor" id="valor" placeholder="100.00">
+    <input type="text" class="form-control" name="valor" id="valor" placeholder="100.00" required>
   </div>
   <div class="form-group">
-    <label for="imagem">Imagem:</label><input type="file" name="pic" accept="image/*"/>
+    <label for="imagem">Imagem:</label><input type="file" name="pic" accept="image/*" required/>
   </div>
   <select id="categoria" name="categoria">
   <?php while($rows_cursos = mysqli_fetch_assoc($resultado_cursos)) { ?>

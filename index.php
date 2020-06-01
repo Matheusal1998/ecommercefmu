@@ -28,7 +28,7 @@ $total_cursos = mysqli_num_rows($resultado_cursos);
      <head>
         <title>LOJA VIRTUAL</title>
 		<link rel="stylesheet" type="text/css" href="css/estilo.css">
-		
+		<meta name="viewport" content="width=device-width, initial-scale=1">
 	
 		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
 		<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
@@ -37,7 +37,7 @@ $total_cursos = mysqli_num_rows($resultado_cursos);
 		<script>
 			
       $(function() {
-         $("#header").load("header.html");
+         $("#header").load("header.php");
          $("#footer").load("footer.html");
       });
    </script>
@@ -69,10 +69,10 @@ $total_cursos = mysqli_num_rows($resultado_cursos);
 			?>
 			<nav class="text-center paginacao">
 				<ul class="pagination">
-					<li>
+					<li >
 						<?php
 						if($pagina_anterior != 0){ ?>
-							<a href="index.php?pagina=<?php echo $pagina_anterior; ?>" aria-label="Previous">
+							<a href="index.php?pagina=<?php echo $pagina_anterior; ?>" aria-label="Previous" >
 								<span aria-hidden="true">&laquo;</span>
 							</a>
 						<?php }else{ ?>
@@ -82,7 +82,7 @@ $total_cursos = mysqli_num_rows($resultado_cursos);
 					<?php 
 					//Apresentar a paginacao
 					for($i = 1; $i < $num_pagina + 1; $i++){ ?>
-						<li><a href="index.php?pagina=<?php echo $i; ?>"><?php echo $i; ?></a></li>
+						<li><a href="index.php?pagina=<?php echo $i; ?>" class="paginationul"><?php echo $i; ?> </a></li>
 					<?php } ?>
 					<li>
 						<?php

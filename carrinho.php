@@ -16,7 +16,7 @@ if (isset($_GET['add']) && $_GET['add'] == "carrinho") {
 
 if (count($_SESSION['itens']) == 0) {
    
-   echo 'Carrinho vazio';
+ 
    
 }
 
@@ -25,33 +25,56 @@ if (count($_SESSION['itens']) == 0) {
 
 <head>
    <title>lOJA VIRTUAL</title>
+   <meta name="viewport" content="width=device-width, initial-scale=1">
    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
 		<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
 		<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100&display=swap" rel="stylesheet">
-		<script src="//code.jquery.com/jquery-1.10.2.js"></script>
+      <script src="//code.jquery.com/jquery-1.10.2.js"></script>
+      
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script src="https://kit.fontawesome.com/ae073d9bf7.js" crossorigin="anonymous"></script><link href="https://kit-free.fontawesome.com/releases/latest/css/free-v4-shims.min.css" media="all" rel="stylesheet"><link href="https://kit-free.fontawesome.com/releases/latest/css/free-v4-font-face.min.css" media="all" rel="stylesheet"><link href="https://kit-free.fontawesome.com/releases/latest/css/free.min.css" media="all" rel="stylesheet">
    <script>
       $(function() {
-         $("#header").load("header.html");
+         $("#header").load("header.php");
          $("#footer").load("footer.html");
       });
    </script>
 </head>
 
 <body>
-   <ul class="nav justify-content-end">
-      <li class="nav-item">
-         <a class="nav-link active" href="index.php">TecNova - Ecommerce Digital</a>
-      </li>
-      <li class="nav-item">
-         <a class="nav-link" href="inicial.php">Login</a>
-      </li>
-      <li class="nav-item">
-         <a class="nav-link" href="listadeprodutos.php">Listas de produtos</a>
-      </li>
-      <li class="nav-item">
-         <a class="nav-link" href="carrinho.php">Carrinho</a>
-      </li>
-   </ul>
+
+<nav class="navbar navbar-light bg-light">
+    <a class="navbar-brand" href="#">
+      <img src="img/ImagemLogo2.png" width="150" height="70" class="d-inline-block align-top" alt="">
+  
+    </a>
+    <?php include_once("conexao.php");
+      
+       if (isset($_SESSION['nome'])) {
+
+         echo '<h6 class="nome-usuario"> Bem vindo, '. $_SESSION['nome'].  '</h6>';
+       }
+
+       ?>
+  </nav>
+<ul class="nav justify-content-end">
+    <li class="nav-item">
+        <a class="nav-link" href="carrinho.php"><i class="fas fa-shopping-cart"></i></a>
+    </li>
+    <li class="nav-item">
+    <?php include_once("conexao.php");
+     
+            if (isset($_SESSION['nome'])) {
+
+            echo '<a class="nav-link" href="logout.php"><i class="fas fa-sign-out-alt"></i></a>';
+            }
+            else{
+                echo '<a class="nav-link" href="inicial_login.php"><i class="fas fa-user"></i></a>';
+            }
+
+            ?>
+    </li>
+</ul>
    <main>
       <div class="container" style="margin-top:20px;">
          <h4>Seu carrinho: </h4>
@@ -71,13 +94,14 @@ if (count($_SESSION['itens']) == 0) {
                   '<div class="produto_carrinho"><h3 class="titulo_carrinho">' . $row_cursos['NOME'] . '</h3>' .
                   '<h3 class="sub-titulo_carrinho"> Valor da unidade: R$' . number_format($row_cursos['VALOR'], 2, ",", ".") . '</h3>' .
                   '<h3 class="sub-titulo_carrinho"> Quantidade:' . $quantidade . '<br></h3>' .
-                  '<h3 class="sub-titulo_carrinho"> Valor Total do produto = R$ ' . number_format($total, 2, ",", ".") . '<br/></h3>' .
+                  '<h3 class="sub-titulo_carrinho"> Valor Total do produto: R$ ' . number_format($total, 2, ",", ".") . '<br/></h3>' .
                   '<a class="btn-remover" href="remover.php?remover=carrinho&id=' . $idproduto . '"> Remover</a><br/></div></div>';
             }
          }
          echo '<br/><div><div><h3 class="valorTotal">  Valor Total: ' . number_format($valorTotal, 2, ",", ".") . '</h3><br/><br/></div>';
 
          ?>
+         <a href="index.php" class="botao">Continuar comprando</a>
          <div style="float: right;">
             <!-- INICIO FORMULARIO BOTAO PAGSEGURO -->
             <form action="https://pagseguro.uol.com.br/checkout/v2/payment.html" method="post" onsubmit="PagSeguroLightbox(this); return false;">
@@ -89,6 +113,11 @@ if (count($_SESSION['itens']) == 0) {
             <script type="text/javascript" src="https://stc.pagseguro.uol.com.br/pagseguro/api/v2/checkout/pagseguro.lightbox.js"></script>
          </div>
 
+         <br>
+         <br>
+         <br>
+         <br>
+         <br>
          <!-- FINAL FORMULARIO BOTAO PAGSEGURO -->
 
 

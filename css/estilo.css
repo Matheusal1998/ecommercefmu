@@ -22,11 +22,16 @@ body{
     text-decoration: none;
     font-size: none;
     list-style: none;
+
 }
 .categoria li{
     
     border-bottom: 1px solid #dcdc;
     margin-left: 4px;
+    width: 20%;
+}
+.categoriaslista{
+    width: 20%;
 }
 .categoria li:hover{
     font-weight: bold;
@@ -47,7 +52,7 @@ footer{
  }
 
  .sub-titulo_carrinho {
-    font-size: 13px;
+    font-size: 17px;
  }
 
  .produto_carrinho {
@@ -84,4 +89,31 @@ footer{
  .filtro{
     border: 0.8px solid #ccc;
     border-radius: 5px;
+ }
+ .botao{
+    padding: 10px;
+    border: 1px solid;
+    float: right;
+    background-color: #007bff;
+    color: #fff;
+    font-weight: bold;
+    text-decoration: none;
+ }
+ .botao:hover{
+     opacity: 0.7;
+     text-decoration: none;
+     color: #fff;
+ }
+ .paginationul{
+    padding: 5px;
+     margin: 5px;
+     border-radius: 20px;
+     background-color: #007bff;
+     color: #000;
+     font-weight: bold;
+ }
+ .nome-usuario{
+    font-size: 16px;
+    color: #007bff;
+
  }

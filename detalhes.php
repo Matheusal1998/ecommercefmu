@@ -20,7 +20,7 @@ $row_cursos = mysqli_fetch_assoc($resultado_cursos);
 	<script src="//code.jquery.com/jquery-1.10.2.js"></script>
 	<script>
 		$(function() {
-			$("#header").load("header.html");
+			$("#header").load("header.php");
 			$("#footer").load("footer.html");
 		});
 	</script>
@@ -34,7 +34,7 @@ $row_cursos = mysqli_fetch_assoc($resultado_cursos);
 		<div class="row">
 
 			<div class="col-md-8">
-				<img src="imagens/<?php echo $row_cursos['IMG']; ?>" width="100%" height="500px" />
+				<img src="imagens/<?php echo $row_cursos['IMG']; ?>" width="70%" height="500px" />
 
 			</div>
 			<div class="col-md-4" style="margin-top: 20%;">
@@ -44,7 +44,7 @@ $row_cursos = mysqli_fetch_assoc($resultado_cursos);
 
 				<h4 class="valor"> R$ <?php echo number_format($row_cursos['VALOR'], 2, ",", ".") ?></h4>
 
-				<a href="carrinho.php?add=carrinho&id=<?php echo  $row_cursos['ID'];; ?>">Adicionar no carrinho</a>
+				<a href="carrinho.php?add=carrinho&id=<?php echo  $row_cursos['ID'];; ?>" class="botao">Adicionar no carrinho</a>
 			</div>
 
 		</div>
